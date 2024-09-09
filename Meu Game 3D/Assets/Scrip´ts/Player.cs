@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 {
     public int velocidade = 10;
     public int forçaPulo = 7;
-    private bool noChao;
+    public bool noChao;
     
     public Rigidbody rb;
     
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     {
         if (!noChao && other.gameObject.tag == "Chão")
         {
-            noChao = true;
+            noChao = false;
         }
         
     }
