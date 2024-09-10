@@ -13,10 +13,15 @@ public class Player : MonoBehaviour
     public bool noChao;
     
     public Rigidbody rb;
+
+    private AudioSource souce; 
     
     void Start()
     {
         TryGetComponent(out rb);
+
+        TryGetComponent(out souce);
+
     }
 
     private void OnCollisionExit(Collision other)
@@ -48,6 +53,11 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) &&  noChao)
         {
+            //pulo
+            
+            souce.Play();
+            
+            
             rb.AddForce(Vector3.up * forçaPulo, ForceMode.Impulse);
             noChao = false;
         }
